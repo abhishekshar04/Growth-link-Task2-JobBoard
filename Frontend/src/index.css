@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@theme{
+    --font-dyna : 'DynaPuff', system-ui;
+    --font-overpass: 'Overpass Mono', monospace;
+}
