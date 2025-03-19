@@ -41,7 +41,7 @@ const JobSchema = new mongoose_1.Schema({
     description: { type: String, required: true },
     salary: { type: Number, required: true },
     category: { type: String, required: true },
-    recruiter: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "User", required: true },
+    recruiter: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Recruiter", required: true },
     createdAt: { type: Date, default: Date.now }
 }, { timestamps: true });
 exports.default = mongoose_1.default.model("Job", JobSchema);

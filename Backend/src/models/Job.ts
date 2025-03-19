@@ -19,7 +19,7 @@ const JobSchema: Schema = new Schema<IJob>(
     description: { type: String, required: true },
     salary: { type: Number, required: true },
     category: { type: String, required: true },
-    recruiter: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    recruiter: { type: mongoose.Schema.Types.ObjectId, ref: "Recruiter", required: true },
     createdAt: { type: Date, default: Date.now }
   },
   { timestamps: true }

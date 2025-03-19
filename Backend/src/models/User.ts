@@ -1,22 +1,39 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-export interface IUser extends Document {
+export interface jobseeker extends Document {
   name: string;
   email: string;
   password: string;
-  role: "jobseeker" | "recruiter";
-  createdAt: Date;
+  skills: string[];
+  education: string[];
+  experience: string[];
 }
 
-const UserSchema: Schema = new Schema<IUser>(
-  {
-    name: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    role: { type: String, enum: ["jobseeker", "recruiter"], required: true },
-    createdAt: { type: Date, default: Date.now }
-  },
-  { timestamps: true }
-);
+export interface recruiter extends Document {
+  name: string;
+  email: string;
+  password: string;
+  company: string;
+}
 
-export default mongoose.model<IUser>("User", UserSchema);
+
+const jobseeker: Schema = new Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  skills: [{ type: String }],
+  education: [{ type: String }],
+  experience: [{ type: String }]
+})
+
+const recruiter: Schema = new Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  company: { type: String}
+})
+
+const Jobseeker = mongoose.model<jobseeker>("Jobseeker", jobseeker);
+const Recruiter = mongoose.model<recruiter>("Recruiter", recruiter);
+
+export { Jobseeker, Recruiter };

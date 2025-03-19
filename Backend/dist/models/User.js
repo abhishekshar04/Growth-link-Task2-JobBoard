@@ -33,12 +33,23 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Recruiter = exports.Jobseeker = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-const UserSchema = new mongoose_1.Schema({
+const jobseeker = new mongoose_1.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    role: { type: String, enum: ["jobseeker", "recruiter"], required: true },
-    createdAt: { type: Date, default: Date.now }
-}, { timestamps: true });
-exports.default = mongoose_1.default.model("User", UserSchema);
+    skills: [{ type: String }],
+    education: [{ type: String }],
+    experience: [{ type: String }]
+});
+const recruiter = new mongoose_1.Schema({
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    company: { type: String }
+});
+const Jobseeker = mongoose_1.default.model("Jobseeker", jobseeker);
+exports.Jobseeker = Jobseeker;
+const Recruiter = mongoose_1.default.model("Recruiter", recruiter);
+exports.Recruiter = Recruiter;

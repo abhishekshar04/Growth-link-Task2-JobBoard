@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const ApplicationSchema = new mongoose_1.Schema({
     job: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Job", required: true },
-    applicant: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "User", required: true },
+    applicant: { type: mongoose_1.default.Schema.Types.ObjectId, ref: "Jobseeker", required: true },
     status: { type: String, enum: ["pending", "reviewed", "shortlisted", "rejected"], default: "pending" },
     appliedAt: { type: Date, default: Date.now }
 }, { timestamps: true });
