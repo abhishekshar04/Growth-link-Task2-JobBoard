@@ -1,5 +1,5 @@
 import Button from "./Button";
-import image from '../../public/man-reading-concept-illustration.png'
+import image from '../man-reading-concept-illustration.png'
 export default function PrimaryCard(){
     return (
         <div className="bg-red-100 p-10 rounded-xl max-h-[200px] flex justify-between items-center">

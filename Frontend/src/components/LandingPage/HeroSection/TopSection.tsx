@@ -31,7 +31,6 @@ export default function TopSection() {
         {/* Right Side - Image Grid */}
         <div className="grid grid-cols-2 gap-4 relative">
           <div className="absolute w-3 h-3 bg-green-700 rounded-full -top-5 right-10"></div>
-          <div className="w-24 h-24 bg-yellow-400 rounded-full absolute bottom-0 left-5"></div>
           <div className="w-3 h-3 bg-orange-500 rounded-full absolute bottom-5 right-5"></div>
           
           <img

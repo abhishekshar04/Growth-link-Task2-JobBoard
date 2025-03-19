@@ -1,20 +1,26 @@
+import React from "react";
+import clsx from "clsx"; // Install: npm install clsx
+
 interface Props {
-    bgColor: string,
-    text: string,
-    textColor: string,
-    filled: boolean,
-    onClick: () => void
+  bgColor: string;
+  text: string;
+  textColor: string;
+  filled?: boolean;
+  onClick: () => void;
 }
 
-function Button(props: Props) {
+const Button: React.FC<Props> = ({ bgColor, text, textColor, filled = false, onClick }) => {
+  return (
+    <button
+      className={clsx(
+        `px-6 py-2 rounded-3xl font-medium transition-all`,
+        filled ? `${bgColor} text-white` : `border ${bgColor} text-${textColor} cursor-pointer`
+      )}
+      onClick={onClick}
+    >
+      {text}
+    </button>
+  );
+};
 
-    const { bgColor, text, textColor, filled, onClick } = props
-
-    return (
-        <button className={`${bgColor} text-${textColor} ${filled ? 'bg-opacity-100' : 'bg-opacity-0'} px-6 py-2 rounded-4xl`} onClick={onClick}>
-            {text}
-        </button>
-    )
-}
-
-export default Button
+export default Button;

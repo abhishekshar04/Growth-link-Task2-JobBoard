@@ -17,7 +17,7 @@ export const NavBar = () => {
         </div>
         <div>
             <ul>
-                <Button bgColor="white" text="Get Started" textColor="black" filled={true} onClick={() => {}} />
+                <Button bgColor="white" text="Get Started" textColor="black" filled={false} onClick={() => {}} />
                 <Button bgColor="bg-[#007456]" text="Post a Job" textColor="white" filled={false} onClick={() => {}} />
             </ul>
         </div>
